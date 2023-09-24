@@ -7,11 +7,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Цвет</h1>
+                    <h1 class="m-0">Категория</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Цвет</li>
+                        <li class="breadcrumb-item active">Категория</li>
                         <li class="breadcrumb-item">Главная</li>
                     </ol>
                 </div><!-- /.col -->
@@ -30,10 +30,10 @@
                     <div class="card">
                         <div class="card-header d-flex p-3">
                             <div class="mr-3">
-                                <a href="{{route('color.edit', $color->id)}}" class="btn btn-primary">Редактировать</a>
+                                <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">Редактировать</a>
                             </div>
 
-                            <form action="{{route('color.delete', $color->id)}}" method="post">
+                            <form action="{{route('user.delete', $user->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Удалить">
@@ -45,15 +45,31 @@
                                 <tbody>
                                     <tr>
                                         <td>ID</td>
-                                        <td>{{$color->id}}</td>
+                                        <td>{{$user->id}}</td>
                                     </tr>
                                     <tr>
                                         <td>Наименование</td>
-                                        <td>{{$color->title}}</td>
+                                        <td>{{$user->name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Цвет</td>
-                                        <td><div style="width: 16px; height: 16px; background: {{'#' . $color->title}}"></div></td>
+                                        <td>Фамилия</td>
+                                        <td>{{$user->surname}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Отчество</td>
+                                        <td>{{$user->patronymic}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{$user->email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Пол</td>
+                                        <td>{{$user->genderTitle}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Адрес</td>
+                                        <td>{{$user->address}}</td>
                                     </tr>
                                 </tbody>
                             </table>
